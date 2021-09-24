@@ -1,0 +1,15 @@
+__pycache__
+results
+*.pyc
+/gifs/
+build
+win_rate
+*.so
+*.csv
+RODE
+*.egg-info
+.vscode
+api
+logs
+.nfs*
+*.so

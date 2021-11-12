@@ -190,7 +190,7 @@ class MPERunner(RecRunner):
 
                 episode_obs[p_id][t] = agent_obs
                 episode_share_obs[p_id][t] = share_obs
-                episode_acts[p_id][t] = act
+                episode_acts[p_id][t] = act if isinstance(act, np.ndarray) else act.cpu().detach().numpy()
 
 
 

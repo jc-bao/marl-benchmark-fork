@@ -1,8 +1,8 @@
 #!/bin/sh
 env="MPE"
 scenario="simple_spread"
-num_landmarks=3
-num_agents=3
+num_landmarks=5
+num_agents=5
 algo="vdn"
 exp="debug"
 seed_max=1

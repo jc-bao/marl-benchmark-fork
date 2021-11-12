@@ -22,7 +22,7 @@ def get_config():
                         help="Number of parallel envs for evaluating rollout")
     parser.add_argument('--num_env_steps', type=int,
                         default=2000000, help="Number of env steps to train for")
-    parser.add_argument('', action='store_true', default=False,
+    parser.add_argument('--use_wandb', action='store_true', default=False,
                         help="Whether to use weights&biases, if not, use tensorboardX instead")
     parser.add_argument('--user_name', type=str, default="zoeyuchao")
 

@@ -21,7 +21,7 @@ class MPERunner(Runner):
         for episode in range(episodes):
             if self.use_linear_lr_decay:
                 self.trainer.policy.lr_decay(episode, episodes)
-
+            self.envs.reset()
             for step in range(self.episode_length):
                 # Sample actions
                 values, actions, action_log_probs, rnn_states, rnn_states_critic, actions_env = self.collect(step)
@@ -34,6 +34,8 @@ class MPERunner(Runner):
                 # insert data into buffer
                 self.insert(data)
 
+                # reset if neccesary
+                if np.all(dones): self.envs.reset()
             # compute return and update network
             self.compute()
             train_infos = self.train()
